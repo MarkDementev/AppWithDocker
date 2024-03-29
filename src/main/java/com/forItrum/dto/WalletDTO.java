@@ -18,15 +18,15 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WalletDTO {
-    @NotNull(message = "The walletId is mandatory")
-    @org.hibernate.validator.constraints.UUID(message = "The walletId must be valid UUID")
+    @NotNull(message = "The walletId is mandatory in JSON!")
+    @org.hibernate.validator.constraints.UUID(message = "The walletId must be valid UUID!")
     private UUID walletId;
 
-    @NotNull(message = "The operationType is mandatory")
+    @NotNull(message = "The operationType is mandatory in JSON!")
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
 
-    @NotNull(message = "The amount is mandatory")
-    @Positive(message = "The amount is only positive value")
+    @NotNull(message = "The amount is mandatory in JSON!")
+    @Positive(message = "The amount is only positive value!")
     private Integer amount;
 }
