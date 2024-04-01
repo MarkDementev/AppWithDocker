@@ -6,7 +6,7 @@
 
     <changeSet id="add-wallet" author="MarkDementev">
         <insert tableName="wallet">
-            <column  name="walletId"  value="8d1208fc-f401-496c-9cb8-483fef121234"/>
+            <column  name="wallet_id"  value="8d1208fc-f401-496c-9cb8-483fef121234"/>
             <column  name="amount"  value="1000"/>
         </insert>
     </changeSet>

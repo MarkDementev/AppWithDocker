@@ -6,7 +6,7 @@
 
     <changeSet id="create-table" author="MarkDementev">
         <createTable tableName="wallet">
-            <column name="walletId" type="uuid">
+            <column name="wallet_id" type="uuid">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="amount" type="int">
