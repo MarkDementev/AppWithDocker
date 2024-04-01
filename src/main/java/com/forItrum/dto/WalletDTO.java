@@ -1,6 +1,6 @@
 package com.forItrum.dto;
 
-import com.forItrum.enums.OperationType;
+import com.forItrum.dto.type.OperationType;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -18,14 +18,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WalletDTO {
-    @NotNull(message = "The walletId is mandatory in JSON!")
+    @NotNull(message = "The walletId is mandatory!")
     private UUID walletId;
 
-    @NotNull(message = "The operationType is mandatory in JSON!")
+    @NotNull(message = "The operationType is mandatory!")
     @Enumerated(EnumType.STRING)
     private OperationType operationType;
 
-    @NotNull(message = "The amount is mandatory in JSON!")
+    @NotNull(message = "The amount is mandatory!")
     @Positive(message = "The amount is only positive value!")
     private Integer amount;
 }

@@ -2,7 +2,7 @@ package com.forItrum.controller;
 
 import com.forItrum.dto.WalletDTO;
 import com.forItrum.model.Wallet;
-import com.forItrum.service.impl.WalletServiceImpl;
+import com.forItrum.service.WalletService;
 
 import jakarta.validation.Valid;
 
@@ -23,16 +23,14 @@ import java.util.UUID;
 @RequestMapping("api/v1")
 @AllArgsConstructor
 public class WalletController {
-    public static final String WALLET_PATH = "/wallets/{WALLET_UUID}";
-    public static final String WALLET_UPDATE_PATH = "/wallet";
-    private final WalletServiceImpl walletService;
+    private final WalletService walletService;
 
-    @GetMapping(WALLET_PATH)
-    public ResponseEntity<Integer> getWalletAmount(@PathVariable UUID walletId) {
+    @GetMapping("/wallets/{WALLET_UUID}")
+    public ResponseEntity<Integer> getWalletAmount(@PathVariable final UUID walletId) {
         return ResponseEntity.ok().body(walletService.getWalletAmount(walletId));
     }
 
-    @PostMapping(WALLET_UPDATE_PATH)
+    @PostMapping("/wallet")
     public ResponseEntity<Wallet> depositOrWithdrawWalletAmount(@RequestBody @Valid WalletDTO walletDTO) {
         return ResponseEntity.ok().body(walletService.depositOrWithdrawWalletAmount(walletDTO));
     }

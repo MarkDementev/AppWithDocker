@@ -1,7 +1,7 @@
 package com.forItrum.service.impl;
 
 import com.forItrum.dto.WalletDTO;
-import com.forItrum.enums.OperationType;
+import com.forItrum.dto.type.OperationType;
 import com.forItrum.exception.BadOperationTypeException;
 import com.forItrum.exception.NotEnoughMoneyException;
 import com.forItrum.exception.WalletNotExistException;
@@ -37,15 +37,15 @@ public class WalletServiceImpl implements WalletService {
                 .orElseThrow(() -> new WalletNotExistException(walletId));
         OperationType inputOperationType = walletDTO.getOperationType();
         Integer walletAmount = walletToUpdate.getAmount();
-        Integer dTOAmount = walletDTO.getAmount();
+        Integer walletDTOAmount = walletDTO.getAmount();
 
         if (inputOperationType == OperationType.DEPOSIT) {
-            walletToUpdate.setAmount(walletAmount + dTOAmount);
+            walletToUpdate.setAmount(walletAmount + walletDTOAmount);
         } else if (inputOperationType == OperationType.WITHDRAW) {
-            if (dTOAmount > walletAmount) {
+            if (walletDTOAmount > walletAmount) {
                 throw new NotEnoughMoneyException(walletAmount);
             }
-            walletToUpdate.setAmount(walletAmount - dTOAmount);
+            walletToUpdate.setAmount(walletAmount - walletDTOAmount);
         } else {
             throw new BadOperationTypeException(inputOperationType);
         }

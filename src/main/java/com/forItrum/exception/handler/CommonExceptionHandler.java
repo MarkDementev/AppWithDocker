@@ -1,4 +1,4 @@
-package com.forItrum;
+package com.forItrum.exception.handler;
 
 import com.forItrum.exception.BadOperationTypeException;
 import com.forItrum.exception.NotEnoughMoneyException;
@@ -24,6 +24,11 @@ public class CommonExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(NotEnoughMoneyException.class)
     public ResponseEntity<NotEnoughMoneyException> notEnoughMoneyExceptionHandler(NotEnoughMoneyException e) {
+        return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Exception> exceptionHandler(Exception e) {
         return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
     }
 }
