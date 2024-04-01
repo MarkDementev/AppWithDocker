@@ -1,4 +1,4 @@
-package com.forItrum.dto.type;
+package com.forItrum.type;
 
 public enum OperationType {
     DEPOSIT("DEPOSIT"), WITHDRAW("WITHDRAW");

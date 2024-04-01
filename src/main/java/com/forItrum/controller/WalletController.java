@@ -26,8 +26,8 @@ public class WalletController {
     private final WalletService walletService;
 
     @GetMapping("/wallets/{WALLET_UUID}")
-    public ResponseEntity<Integer> getWalletAmount(@PathVariable final UUID walletId) {
-        return ResponseEntity.ok().body(walletService.getWalletAmount(walletId));
+    public ResponseEntity<Integer> getWalletAmount(@PathVariable UUID WALLET_UUID) {
+        return ResponseEntity.ok().body(walletService.getWalletAmount(WALLET_UUID));
     }
 
     @PostMapping("/wallet")

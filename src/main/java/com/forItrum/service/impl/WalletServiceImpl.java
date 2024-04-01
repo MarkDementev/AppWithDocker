@@ -1,7 +1,7 @@
 package com.forItrum.service.impl;
 
 import com.forItrum.dto.WalletDTO;
-import com.forItrum.dto.type.OperationType;
+import com.forItrum.type.OperationType;
 import com.forItrum.exception.BadOperationTypeException;
 import com.forItrum.exception.NotEnoughMoneyException;
 import com.forItrum.exception.WalletNotExistException;
@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 @RequiredArgsConstructor
@@ -33,22 +34,23 @@ public class WalletServiceImpl implements WalletService {
     @Transactional(isolation = Isolation.REPEATABLE_READ)
     public Wallet depositOrWithdrawWalletAmount(WalletDTO walletDTO) {
         UUID walletId = walletDTO.getWalletId();
-        final Wallet walletToUpdate = walletRepository.findById(walletId)
+        Wallet walletToUpdate = walletRepository.findById(walletId)
                 .orElseThrow(() -> new WalletNotExistException(walletId));
+        AtomicReference<Wallet> atomicWalletToUpdate = new AtomicReference<>(walletToUpdate);
         OperationType inputOperationType = walletDTO.getOperationType();
-        Integer walletAmount = walletToUpdate.getAmount();
+        Integer walletAmount = atomicWalletToUpdate.get().getAmount();
         Integer walletDTOAmount = walletDTO.getAmount();
 
         if (inputOperationType == OperationType.DEPOSIT) {
-            walletToUpdate.setAmount(walletAmount + walletDTOAmount);
+            atomicWalletToUpdate.getAndSet(new Wallet(walletId, walletAmount + walletDTOAmount));
         } else if (inputOperationType == OperationType.WITHDRAW) {
             if (walletDTOAmount > walletAmount) {
                 throw new NotEnoughMoneyException(walletAmount);
             }
-            walletToUpdate.setAmount(walletAmount - walletDTOAmount);
+            atomicWalletToUpdate.getAndSet(new Wallet(walletId, walletAmount - walletDTOAmount));
         } else {
             throw new BadOperationTypeException(inputOperationType);
         }
-        return walletRepository.save(walletToUpdate);
+        return walletRepository.save(atomicWalletToUpdate.get());
     }
 }

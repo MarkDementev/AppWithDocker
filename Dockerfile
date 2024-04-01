@@ -1,9 +1,9 @@
-FROM eclipse-temurin:17-jdk as builder
+FROM openjdk:17-jdk-slim as builder
 WORKDIR /app
 COPY . /app/.
 RUN ./gradlew clean build
 
-FROM eclipse-temurin:17
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY --from=builder /app/build/libs/*.jar /app/*.jar
 EXPOSE 8091

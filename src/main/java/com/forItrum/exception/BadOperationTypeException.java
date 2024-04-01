@@ -1,6 +1,6 @@
 package com.forItrum.exception;
 
-import com.forItrum.dto.type.OperationType;
+import com.forItrum.type.OperationType;
 
 import java.util.Arrays;
 

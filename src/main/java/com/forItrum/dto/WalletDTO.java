@@ -1,6 +1,6 @@
 package com.forItrum.dto;
 
-import com.forItrum.dto.type.OperationType;
+import com.forItrum.type.OperationType;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
