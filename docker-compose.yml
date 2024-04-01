@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   service-java:
-    image: backend:1.0.0
+    image: foritrum:0.0.1
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,7 +10,7 @@ services:
     depends_on:
       - service-db
     environment:
-      - SERVER_PORT= 8181
+      - SERVER_PORT= 8091
       - SPRING_DATASOURCE_URL=jdbc:postgresql://service-db/wallets_db
 
   service-db:

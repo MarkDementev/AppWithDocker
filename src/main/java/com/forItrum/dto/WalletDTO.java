@@ -19,7 +19,6 @@ import java.util.UUID;
 @NoArgsConstructor
 public class WalletDTO {
     @NotNull(message = "The walletId is mandatory in JSON!")
-    @org.hibernate.validator.constraints.UUID(message = "The walletId must be valid UUID!")
     private UUID walletId;
 
     @NotNull(message = "The operationType is mandatory in JSON!")

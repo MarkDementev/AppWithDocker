@@ -23,18 +23,16 @@ import java.util.UUID;
 @RequestMapping("api/v1")
 @AllArgsConstructor
 public class WalletController {
-    public static final String WALLET_PATH = "/wallet";
-    public static final String ALL_WALLETS_PATH = "/wallets";
-    public static final String WALLET_ID_PATH = "/{WALLET_UUID}";
-
+    public static final String WALLET_PATH = "/wallets/{WALLET_UUID}";
+    public static final String WALLET_UPDATE_PATH = "/wallet";
     private final WalletServiceImpl walletService;
 
-    @GetMapping(ALL_WALLETS_PATH + WALLET_ID_PATH)
+    @GetMapping(WALLET_PATH)
     public ResponseEntity<Integer> getWalletAmount(@PathVariable UUID walletId) {
         return ResponseEntity.ok().body(walletService.getWalletAmount(walletId));
     }
 
-    @PostMapping(WALLET_PATH)
+    @PostMapping(WALLET_UPDATE_PATH)
     public ResponseEntity<Wallet> depositOrWithdrawWalletAmount(@RequestBody @Valid WalletDTO walletDTO) {
         return ResponseEntity.ok().body(walletService.depositOrWithdrawWalletAmount(walletDTO));
     }
