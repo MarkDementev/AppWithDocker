@@ -9,8 +9,8 @@ import static com.forItrum.config.SpringConfigForTests.TEST_PROFILE;
 
 @Configuration
 @Profile(TEST_PROFILE)
-@ComponentScan(basePackages = "com.forItrum")
-@PropertySource(value = "classpath:/test_properties/application.properties")
+@ComponentScan(basePackages = "com.appWithDocker")
+@PropertySource(value = "classpath:/application-test.properties")
 public class SpringConfigForTests {
     public static final String TEST_PROFILE = "test";
 }
