@@ -1,4 +1,4 @@
-package com.forItrum.exception;
+package com.appWithDocker.exception;
 
 import java.util.UUID;
 

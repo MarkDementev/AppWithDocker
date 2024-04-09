@@ -1,4 +1,4 @@
-package com.forItrum.model;
+package com.appWithDocker.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

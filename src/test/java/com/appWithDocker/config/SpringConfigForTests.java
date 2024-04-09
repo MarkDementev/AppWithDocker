@@ -1,11 +1,11 @@
-package com.forItrum.config;
+package com.appWithDocker.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 
-import static com.forItrum.config.SpringConfigForTests.TEST_PROFILE;
+import static com.appWithDocker.config.SpringConfigForTests.TEST_PROFILE;
 
 @Configuration
 @Profile(TEST_PROFILE)

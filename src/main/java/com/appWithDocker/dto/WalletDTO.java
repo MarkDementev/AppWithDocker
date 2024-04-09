@@ -1,6 +1,6 @@
-package com.forItrum.dto;
+package com.appWithDocker.dto;
 
-import com.forItrum.type.OperationType;
+import com.appWithDocker.type.OperationType;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

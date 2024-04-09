@@ -1,8 +1,8 @@
-package com.forItrum.controller;
+package com.appWithDocker.controller;
 
-import com.forItrum.dto.WalletDTO;
-import com.forItrum.model.Wallet;
-import com.forItrum.service.WalletService;
+import com.appWithDocker.dto.WalletDTO;
+import com.appWithDocker.model.Wallet;
+import com.appWithDocker.service.WalletService;
 
 import jakarta.validation.Valid;
 

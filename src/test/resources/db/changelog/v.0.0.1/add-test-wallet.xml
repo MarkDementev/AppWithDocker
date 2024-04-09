@@ -4,7 +4,7 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="add-wallet" author="MarkDementev">
+    <changeSet id="add-test-wallet" author="MarkDementev">
         <insert tableName="wallet">
             <column  name="wallet_id"  value="8d1208fc-f401-496c-9cb8-483fef121234"/>
             <column  name="amount"  value="1000"/>

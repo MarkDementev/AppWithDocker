@@ -1,13 +1,13 @@
-package com.forItrum.service.impl;
+package com.appWithDocker.service.impl;
 
-import com.forItrum.dto.WalletDTO;
-import com.forItrum.type.OperationType;
-import com.forItrum.exception.BadOperationTypeException;
-import com.forItrum.exception.NotEnoughMoneyException;
-import com.forItrum.exception.WalletNotExistException;
-import com.forItrum.model.Wallet;
-import com.forItrum.repository.WalletRepository;
-import com.forItrum.service.WalletService;
+import com.appWithDocker.dto.WalletDTO;
+import com.appWithDocker.type.OperationType;
+import com.appWithDocker.exception.BadOperationTypeException;
+import com.appWithDocker.exception.NotEnoughMoneyException;
+import com.appWithDocker.exception.WalletNotExistException;
+import com.appWithDocker.model.Wallet;
+import com.appWithDocker.repository.WalletRepository;
+import com.appWithDocker.service.WalletService;
 
 import lombok.RequiredArgsConstructor;
 

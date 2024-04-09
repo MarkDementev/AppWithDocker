@@ -1,8 +1,8 @@
-package com.forItrum.exception.handler;
+package com.appWithDocker.exception.handler;
 
-import com.forItrum.exception.BadOperationTypeException;
-import com.forItrum.exception.NotEnoughMoneyException;
-import com.forItrum.exception.WalletNotExistException;
+import com.appWithDocker.exception.BadOperationTypeException;
+import com.appWithDocker.exception.NotEnoughMoneyException;
+import com.appWithDocker.exception.WalletNotExistException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

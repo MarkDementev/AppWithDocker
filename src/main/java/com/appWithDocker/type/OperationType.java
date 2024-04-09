@@ -1,4 +1,4 @@
-package com.forItrum.type;
+package com.appWithDocker.type;
 
 public enum OperationType {
     DEPOSIT("DEPOSIT"), WITHDRAW("WITHDRAW");

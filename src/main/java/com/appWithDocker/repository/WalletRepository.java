@@ -1,6 +1,6 @@
-package com.forItrum.repository;
+package com.appWithDocker.repository;
 
-import com.forItrum.model.Wallet;
+import com.appWithDocker.model.Wallet;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

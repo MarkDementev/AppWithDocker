@@ -1,7 +1,7 @@
-package com.forItrum.service;
+package com.appWithDocker.service;
 
-import com.forItrum.dto.WalletDTO;
-import com.forItrum.model.Wallet;
+import com.appWithDocker.dto.WalletDTO;
+import com.appWithDocker.model.Wallet;
 
 import java.util.UUID;
 

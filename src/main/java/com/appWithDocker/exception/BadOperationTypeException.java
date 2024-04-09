@@ -1,6 +1,6 @@
-package com.forItrum.exception;
+package com.appWithDocker.exception;
 
-import com.forItrum.type.OperationType;
+import com.appWithDocker.type.OperationType;
 
 import java.util.Arrays;
 
