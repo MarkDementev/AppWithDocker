@@ -9,11 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import static com.appWithDocker.config.SpringConfigForTests.TEST_PROFILE;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+//
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+//
+//import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+//import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @SpringBootTest(classes = SpringConfigForTests.class)
 @ActiveProfiles(TEST_PROFILE)
