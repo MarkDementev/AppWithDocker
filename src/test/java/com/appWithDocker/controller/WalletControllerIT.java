@@ -49,7 +49,7 @@ public class WalletControllerIT {
     private final WalletDTO testWalletWithdrawDTO = new WalletDTO(
             UUID.fromString(TEST_UUID_STRING),
             OperationType.WITHDRAW,
-            TEST_AMOUNT_DIFF_VALUE * 3
+            TEST_AMOUNT_DIFF_VALUE
     );
 
     @AfterEach
@@ -75,18 +75,38 @@ public class WalletControllerIT {
 
     @Test
     public void depositOrWithdrawWalletAmountIT() throws Exception {
-        mockMvc.perform(
-                post("/api/v1/wallet")
-                        .content(MAPPER.writeValueAsString(testWalletDepositDTO))
-                        .contentType(APPLICATION_JSON)
-        );
-        mockMvc.perform(
-                post("/api/v1/wallet")
-                        .content(MAPPER.writeValueAsString(testWalletWithdrawDTO))
-                        .contentType(APPLICATION_JSON)
-        );
+        PostRequestsThread depositThread = new PostRequestsThread(testWalletDepositDTO);
+        PostRequestsThread withdrawThread = new PostRequestsThread(testWalletWithdrawDTO);
 
-        assertEquals(0,
+        depositThread.start();
+        depositThread.join();
+        withdrawThread.start();
+        withdrawThread.join();
+
+        assertEquals(BASE_TEST_AMOUNT_VALUE,
                 walletRepository.findById(UUID.fromString(TEST_UUID_STRING)).orElseThrow().getAmount());
+    }
+
+    class PostRequestsThread extends Thread {
+        final WalletDTO walletDTO;
+
+        public PostRequestsThread(WalletDTO walletDTO) {
+            this.walletDTO = walletDTO;
+        }
+
+        @Override
+        public void run() {
+            for (int i = 0; i < 1000; i++) {
+                try {
+                    mockMvc.perform(
+                            post("/api/v1/wallet")
+                                    .content(MAPPER.writeValueAsString(walletDTO))
+                                    .contentType(APPLICATION_JSON)
+                    );
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 }
