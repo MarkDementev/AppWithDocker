@@ -22,7 +22,7 @@ WITHDROW - remove amount to wallet.
 {
     "walletId": "8d1208fc-f401-496c-9cb8-483fef121234",
     "operationType": "WITHDRAW",
-    "amount": "1000"
+    "amount": 1000
 }
 ```
 
@@ -31,7 +31,7 @@ WITHDROW - remove amount to wallet.
 ```sh
 {
     "walletId": "8d1208fc-f401-496c-9cb8-483fef121234",
-    "amount": "2000"
+    "amount": 2000
 }
 ```
 
