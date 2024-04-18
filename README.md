@@ -16,7 +16,7 @@ POST api/v1/wallet + JSON
 
 operationType: DEPOSIT or WITHDRAW.
 DEPOSIT - add amount to wallet.
-WITHDROW - remove amount to wallet.
+WITHDRAW - remove amount to wallet.
 
 ```sh
 {
