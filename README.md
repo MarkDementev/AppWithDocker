@@ -6,7 +6,7 @@ The application and database are using docker-compose.
 
 ## How to use
 
-Request:
+### POST request:
 
 ```sh
 POST api/v1/wallet
