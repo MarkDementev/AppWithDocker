@@ -54,7 +54,5 @@ GET api/v1/wallets/8d1208fc-f401-496c-9cb8-483fef121234
 #### Response:
 
 ```sh
-{
-    "amount": "2000"
-}
+2000
 ```
