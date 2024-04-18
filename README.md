@@ -6,6 +6,8 @@ The application and database are using Docker Compose.
 
 ## How to use
 
+### Amount value change
+
 #### POST request:
 
 ```sh
@@ -25,6 +27,7 @@ WITHDROW - remove amount to wallet.
 ```
 
 #### Response:
+
 ```sh
 {
     "walletId": "8d1208fc-f401-496c-9cb8-483fef121234",
@@ -34,7 +37,9 @@ WITHDROW - remove amount to wallet.
 
 The amount of wallet with walletId = 8d1208fc-f401-496c-9cb8-483fef121234 has increased to 2000, before the request it was equal to 1000.
 
-##### GET request:
+### Get wallet amount
+
+#### GET request:
 
 ```sh
 GET api/v1/wallets/{WALLET_UUID}
