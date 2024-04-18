@@ -1,7 +1,6 @@
 package com.webWallet.controller;
 
 import com.webWallet.config.SpringConfigForTests;
-import com.webWallet.config.WalletPostgresqlContainer;
 import com.webWallet.dto.WalletDTO;
 import com.webWallet.model.Wallet;
 import com.webWallet.repository.WalletRepository;
@@ -10,7 +9,6 @@ import com.webWallet.type.OperationType;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.junit.ClassRule;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,8 +17,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-
-import org.testcontainers.containers.PostgreSQLContainer;
 
 import java.util.UUID;
 
@@ -37,9 +33,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = SpringConfigForTests.class)
 @AutoConfigureMockMvc
 public class WalletControllerIT {
-    @ClassRule
-    public static PostgreSQLContainer<WalletPostgresqlContainer> postgreSQLContainer
-            = WalletPostgresqlContainer.getInstance();
     public static final String TEST_UUID_STRING = "8d1208fc-f401-496c-9cb8-483fef121234";
     public static final Integer BASE_TEST_AMOUNT_VALUE = 1000;
     public static final Integer TEST_AMOUNT_DIFF_VALUE = 500;
