@@ -6,13 +6,13 @@ The application and database are using Docker Compose.
 
 ## How to use
 
-### POST request:
+#### POST request:
 
 ```sh
-POST api/v1/wallet
+POST api/v1/wallet + JSON
 ```
 
-operationType: DEPOSIT or WITHDROW.
+operationType: DEPOSIT or WITHDRAW.
 DEPOSIT - add amount to wallet.
 WITHDROW - remove amount to wallet.
 
@@ -24,7 +24,30 @@ WITHDROW - remove amount to wallet.
 }
 ```
 
-Response:
+#### Response:
+```sh
+{
+    "walletId": "8d1208fc-f401-496c-9cb8-483fef121234",
+    "amount": "2000"
+}
+```
+
+The amount of wallet with walletId = 8d1208fc-f401-496c-9cb8-483fef121234 has increased to 2000, before the request it was equal to 1000.
+
+##### GET request:
+
+```sh
+GET api/v1/wallets/{WALLET_UUID}
+```
+
+#### Request:
+
+```sh
+GET api/v1/wallets/8d1208fc-f401-496c-9cb8-483fef121234
+```
+
+#### Response:
+
 ```sh
 {
     "amount": "2000"
