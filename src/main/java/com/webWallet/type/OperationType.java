@@ -1,4 +1,4 @@
-package com.appWithDocker.type;
+package com.webWallet.type;
 
 public enum OperationType {
     DEPOSIT("DEPOSIT"), WITHDRAW("WITHDRAW");

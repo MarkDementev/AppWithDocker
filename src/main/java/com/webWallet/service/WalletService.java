@@ -1,7 +1,7 @@
-package com.appWithDocker.service;
+package com.webWallet.service;
 
-import com.appWithDocker.dto.WalletDTO;
-import com.appWithDocker.model.Wallet;
+import com.webWallet.dto.WalletDTO;
+import com.webWallet.model.Wallet;
 
 import java.util.UUID;
 

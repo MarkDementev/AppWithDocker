@@ -1,6 +1,6 @@
-package com.appWithDocker.dto;
+package com.webWallet.dto;
 
-import com.appWithDocker.type.OperationType;
+import com.webWallet.type.OperationType;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

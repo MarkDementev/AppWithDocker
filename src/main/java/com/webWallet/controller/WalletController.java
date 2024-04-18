@@ -1,8 +1,8 @@
-package com.appWithDocker.controller;
+package com.webWallet.controller;
 
-import com.appWithDocker.dto.WalletDTO;
-import com.appWithDocker.model.Wallet;
-import com.appWithDocker.service.WalletService;
+import com.webWallet.dto.WalletDTO;
+import com.webWallet.model.Wallet;
+import com.webWallet.service.WalletService;
 
 import jakarta.validation.Valid;
 

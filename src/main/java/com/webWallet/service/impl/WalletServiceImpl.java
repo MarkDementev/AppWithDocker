@@ -1,13 +1,13 @@
-package com.appWithDocker.service.impl;
+package com.webWallet.service.impl;
 
-import com.appWithDocker.dto.WalletDTO;
-import com.appWithDocker.type.OperationType;
-import com.appWithDocker.exception.BadOperationTypeException;
-import com.appWithDocker.exception.NotEnoughMoneyException;
-import com.appWithDocker.exception.WalletNotExistException;
-import com.appWithDocker.model.Wallet;
-import com.appWithDocker.repository.WalletRepository;
-import com.appWithDocker.service.WalletService;
+import com.webWallet.dto.WalletDTO;
+import com.webWallet.type.OperationType;
+import com.webWallet.exception.BadOperationTypeException;
+import com.webWallet.exception.NotEnoughMoneyException;
+import com.webWallet.exception.WalletNotExistException;
+import com.webWallet.model.Wallet;
+import com.webWallet.repository.WalletRepository;
+import com.webWallet.service.WalletService;
 
 import lombok.RequiredArgsConstructor;
 

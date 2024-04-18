@@ -1,11 +1,11 @@
-package com.appWithDocker;
+package com.webWallet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppWithDocker {
+public class WebWallet {
 	public static void main(String[] args) {
-		SpringApplication.run(AppWithDocker.class, args);
+		SpringApplication.run(WebWallet.class, args);
 	}
 }

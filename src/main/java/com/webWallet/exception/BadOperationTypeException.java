@@ -1,6 +1,6 @@
-package com.appWithDocker.exception;
+package com.webWallet.exception;
 
-import com.appWithDocker.type.OperationType;
+import com.webWallet.type.OperationType;
 
 import java.util.Arrays;
 

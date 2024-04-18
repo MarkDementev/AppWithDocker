@@ -1,8 +1,8 @@
-package com.appWithDocker.exception.handler;
+package com.webWallet.exception.handler;
 
-import com.appWithDocker.exception.BadOperationTypeException;
-import com.appWithDocker.exception.NotEnoughMoneyException;
-import com.appWithDocker.exception.WalletNotExistException;
+import com.webWallet.exception.BadOperationTypeException;
+import com.webWallet.exception.NotEnoughMoneyException;
+import com.webWallet.exception.WalletNotExistException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

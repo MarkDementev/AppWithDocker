@@ -1,4 +1,4 @@
-package com.appWithDocker.exception;
+package com.webWallet.exception;
 
 import java.util.UUID;
 

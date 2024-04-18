@@ -1,4 +1,4 @@
-package com.appWithDocker.exception;
+package com.webWallet.exception;
 
 public class NotEnoughMoneyException extends IllegalArgumentException {
     public static final String MESSAGE = "Wallet doesn't have this sum of money! Amount is only: ";
