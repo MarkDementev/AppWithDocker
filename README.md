@@ -2,7 +2,7 @@
 
 Spring Boot REST application.
 Provides storage and modification of wallets amount data. It is stable to work with a multithreaded requests. 
-The application and database are using docker-compose.
+The application and database are using Docker Compose.
 
 ## How to use
 
